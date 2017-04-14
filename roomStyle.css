@@ -31,6 +31,9 @@
      color: black;
      padding: 8px;
  }
+.tooltip_template{
+    display: none;
+}
  
  .iframeContainer {
      position: relative;
@@ -54,7 +57,7 @@
  }
  
  .button {
-     opacity: 0;
+     opacity: 1; /*TO CHANGE*/
      position: absolute;
      width: 3.5%;
      height: 5%;

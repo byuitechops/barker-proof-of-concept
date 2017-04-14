@@ -319,7 +319,7 @@ var links = [
     },
     {
         selector: "books",
-        special: true,
+        isBook: true,
         books: [{
                 title: "1984",
                 filePath: "1984%20Group%20Room.html"
@@ -352,9 +352,16 @@ var links = [
     }
 ];
 
+//this is to make the icons stay while hovering over the tooltip
+function tooltipOpacity(instance, helper) {
+    $(".tooltipster-base").hover(function () {
+        $(".button").css("opacity", "1");
+    }, function () {
+        $(".button").css("opacity", "0");
+    });
+}
 
-
-// adds an event listener that makes D2L icons appear on hover
+// adds an event listener that makes all D2L icons appear on hover
 function toggleVisibility() {
     $(".thingLinkFrame, .button").hover(function () {
         $(".button").css("opacity", "1");
@@ -363,10 +370,18 @@ function toggleVisibility() {
     });
 }
 
+function generateQuizPopups() {
+    $(".quiz").tooltipster({
+        theme: ['tooltipster-shadow', 'tooltipster-shadow-customized'],
+        contentAsHTML: true,
+        interactive: true,
+        functionReady: tooltipOpacity
+    });
+}
 
 $(document).ready(function () {
     toggleVisibility();
-    //    console.log(window.location);
+    generateQuizPopups();
     var courseCode = window.location.pathname.match(/(?:enforced|home)\/(\d+.*\/)/);
     if (courseCode != null) {
         courseCode = courseCode[1];
@@ -376,7 +391,7 @@ $(document).ready(function () {
         var htmlStr = "";
 
         // this is to generate the popup including links to the various book rooms
-        if (link.special === true) {
+        if (link.isBook === true) {
             htmlStr += "<p>GROUP ROOMS:</p>";
             link.books.forEach(function (book) {
                 htmlStr += "<a href='" + book.filePath + "'>" + book.title + "</a><br>";
@@ -396,16 +411,10 @@ $(document).ready(function () {
             interactive: true,
             contentAsHTML: true,
             theme: ['tooltipster-shadow', 'tooltipster-shadow-customized'],
-            functionReady: function (instance, helper) {
-                console.log("HELPER", helper);
-                $(".tooltipster-base").hover(function () {
-                    $(".button").css("opacity", "1");
-                }, function () {
-                    $(".button").css("opacity", "0");
-                });
-            }
+            functionReady: tooltipOpacity
         });
-        $("." + link.selector).wrap("<a href=" + link.filePath + " target='_top'></a>")
-
+        if (link.isBook !== true) {
+            $("." + link.selector).wrap("<a href=" + link.filePath + " target='_top'></a>");
+        }
     });
 });
