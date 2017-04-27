@@ -397,7 +397,7 @@ $(document).ready(function () {
                 htmlStr += "<a href='" + book.filePath + "'>" + book.title + "</a><br>";
             });
         } else {
-            htmlStr += "<a href='./" + link.filePath + "' target='_top'>";
+            htmlStr += "<a href='./" + link.filePath + "' target='_top' class='popupLink'>";
             htmlStr += "<img class='popupImage' src='/content/enforced/" + courseCode + "gamification/map/popupImages/" + link.image + "' style='height:150px'>";
             htmlStr += "<p>" + link.description + "</p></a>";
         }
