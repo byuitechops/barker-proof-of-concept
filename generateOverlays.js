@@ -411,7 +411,16 @@ $(document).ready(function () {
             interactive: true,
             contentAsHTML: true,
             theme: ['tooltipster-shadow', 'tooltipster-shadow-customized'],
-            functionReady: tooltipOpacity
+            functionReady: tooltipOpacity,
+            trigger: 'custom',
+            triggerOpen: {
+                tap: true,
+                mouseenter: true
+            },
+            triggerClose: {
+                tap: true,
+                mouseleave: true
+            }
         });
         if (link.isBook !== true) {
             $("." + link.selector).wrap("<a href=" + link.filePath + " target='_top'></a>");
