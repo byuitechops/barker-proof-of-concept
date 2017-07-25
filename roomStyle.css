@@ -2,7 +2,7 @@
      font-family: 'verdana', sans-serif;
      font-size: 12pt;
  }
- 
+
  .roomHeader {
      background-color: #e4e4e4;
      margin: 0px;
@@ -11,43 +11,43 @@
      border-top: 2px solid #989898;
      width: 100%;
  }
- 
+
  .roomHeader h2 {
      margin: 0px;
      padding: 20px;
  }
- 
+
  .tooltip_templates {
      display: none;
  }
- 
+
  .tooltipster-sidetip.tooltipster-shadow.tooltipster-shadow-customized .tooltipster-box {
      background: white;
      border: none;
      box-shadow: 5px 5px 2px 0 rgba(0, 0, 0, 0.4);
      border-radius: 0px;
  }
- 
+
  .tooltipster-sidetip.tooltipster-shadow.tooltipster-shadow-customized .tooltipster-content {
      color: black;
      padding: 8px;
  }
- 
+
  .tooltip_template {
      display: none;
  }
- 
+
  .iframeContainer {
      position: relative;
      overflow: hidden;
      height: 0;
      max-width: 1000px;
  }
- 
+
  .iframeRatio {
      padding-bottom: 72.75%;
  }
- 
+
  .thingLinkFrame {
      position: absolute;
      top: 0;
@@ -57,7 +57,7 @@
      max-width: 1000px;
      max-height: 727px;
  }
- 
+
  .button {
      opacity: 1;
      /*TO CHANGE*/
@@ -68,7 +68,7 @@
      min-height: 15px;
      z-index: 20;
  }
- 
+
  .wrapper {
      position: absolute;
      max-width: 1000px;
@@ -76,11 +76,11 @@
      height: 71vw;
      width: 98vw;
  }
- 
+
  .popupImage {
      height: 150px;
  }
- 
+
  .openBookcase {
      opacity: 0;
      padding: 1%;
@@ -94,31 +94,31 @@
      top: 37%;
      left: 41%;
  }
- 
+
  .openBookcase:hover {
      opacity: 1;
  }
- 
+
  .openBookcase a {
      color: black;
      text-decoration: none;
  }
- 
+
  .popupLink {
      text-decoration: none;
      color: black;
  }
- 
+
  .workspaceLinks {
      position: absolute;
      top: 85%;
      left: 3%;
  }
- 
+
  @media screen and (max-width:1020) {
      .workspaceLinks {
          position: absolute;
-         top: 85%;
+         top: 800px;
          left: 50px;
      }
  }
